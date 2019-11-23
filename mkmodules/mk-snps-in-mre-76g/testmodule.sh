@@ -7,5 +7,5 @@ rm -fr test/results/
 
 # Crear un test/results vacío
 mkdir -p test/results
-bash runmk.sh && mv test/data/*.mre_snps.vcf.gz test/results/ \
+bash runmk.sh && mv test/data/*.snps_per_mre.vcf.gz test/results/ \
  && echo "module test successful"

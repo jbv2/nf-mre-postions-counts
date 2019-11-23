@@ -8,6 +8,6 @@ MKSHELL=/bin/bash
 %.tmp.bed:Q: %.bed
 		echo "writing positions in genome of mre sites with snps of $prereq"
 		bedtools intersect \
-			-a $VCF_FILE \
+			-a $stem.vcf.gz \
 			-b $prereq \
 		  -wa -wb > $target

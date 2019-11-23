@@ -1,7 +1,7 @@
 #!/bin/#!/usr/bin/env bash
 
 ## ENVIRONMENTE VARIABLES REQUIRED
-export VCF_FILE="test/data/sample_76g_PASS.mre_snps.vcf.gz"
+export VCF_FILE="test/data/sample_76g_PASS.snps_per_mre.vcf.gz"
 # borrar resultados de prueba anterior
 rm -fr test/results/
 

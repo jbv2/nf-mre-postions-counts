@@ -10,9 +10,9 @@ print(args)
 # For Debbuging only
 # Comentar estas líneas cuando el script pase a producción
 #args[1] is the bed file
-args[1] <- "test/data/sample_76g_PASS.snps_per_mre.tmp.bed"
+#args[1] <- "test/data/sample_76g_PASS.snps_per_mre.tmp.bed"
 #args[2] is the target file (expected output file)
-args[2] <- "test/data/positions_in_mre.tsv"
+#args[2] <- "test/data/positions_in_mre.tsv"
 
 ## Define input and outputs
 input_file <- args[1]
