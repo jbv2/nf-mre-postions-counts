@@ -1,5 +1,5 @@
 ## Load libraries
-library("dplyr")
+library("dplyr", warn.conflicts = FALSE, quietly = TRUE)
 
 #starting args object to recieve arguments from command line
 #solution taken from https://www.r-bloggers.com/passing-arguments-to-an-r-script-from-command-lines/
