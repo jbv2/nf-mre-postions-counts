@@ -1,0 +1,10 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+%.mre_snps.vcf.gz:Q: %.vcf.gz
+	echo "Keeping SNPs that are found in MRE"
+	bcftools view \
+		--regions-file $BED_FILE \
+		$prereq \
+		| uniq \
+		| bgzip > $target

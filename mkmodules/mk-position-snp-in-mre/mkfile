@@ -1,0 +1,13 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+%.positions_in_mre.tsv:Q: %.tmp.bed
+	echo "writing position of the mre which harbors snps"
+	Rscript --vanilla Rscript.R $prereq $target
+
+%.tmp.bed:Q: %.bed
+		echo "writing positions in genome of mre sites with snps of $prereq"
+		bedtools intersect \
+			-a $VCF_FILE \
+			-b $prereq \
+		  -wa -wb > $target

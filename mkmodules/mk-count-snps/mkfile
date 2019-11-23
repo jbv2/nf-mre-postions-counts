@@ -1,0 +1,18 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+%.snps_per_mre.bed:Q: %.all_snps_per_mre.bed
+	echo "adding numer of snps per mre at last column"
+	awk '
+			BEGIN {FS=OFS="\t"}
+			$13!~/0/ { print $0 }
+			' $prereq > $target.build \
+			&& mv $target.build $target
+
+
+%.all_snps_per_mre.bed:Q: %.vcf.gz
+	echo "making intersection of mre sites with snps of $prereq"
+	bedtools intersect \
+		-a $BED_FILE \
+		-b $prereq \
+		-c > $target
